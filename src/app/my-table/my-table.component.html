@@ -1,0 +1,29 @@
+<select class="form-control" [(ngModel)]="selectedCategory">
+  <option [ngValue]="undefined" disabled  selected>Select...</option>
+  <option *ngFor="let cat of categories" [ngValue]="cat">{{cat.name}}</option>
+</select>
+
+<table class="table table-striped" border="1" width="100%" cellpadding="5">
+    <tr>
+     <th>ID</th>     
+     <th>Name</th>
+     <th>Price</th>
+    </tr>
+  
+    <tr *ngFor="let product of products" [ngStyle]="{color: getColor(product)}">
+      <td >{{product.id}}</td >
+      <td>{{product.name}}</td>
+      <td >{{product.price}}</td>
+      <button class="btn btn-danger" (click)="deleteProduct(product)">Delete</button>
+    </tr> 
+  </table>
+
+  <form action="" (submit)="addTask(task.value, name.value, price.value)">
+    <label for="task"></label>
+    <input type="text" class="form-control" #task required placeholder="id">
+    <input type="text" class="form-control" #name required placeholder="name">
+    <input type="text" class="form-control" #price required placeholder="price">
+    <button type="submit" class="btn btn-info" id="addButton">Add task</button>
+  </form>
+
+  
