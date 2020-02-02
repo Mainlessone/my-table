@@ -1,5 +1,5 @@
 <select class="form-control" [(ngModel)]="selectedCategory">
-  <option [ngValue]="undefined" selected>Select...</option>
+  <option [ngValue]="undefined" selected >Select...</option>
   <option *ngFor="let cat of categories" [ngValue]="cat">{{cat.name}}</option>
 </select>
 
@@ -11,7 +11,7 @@
      <th>Price</th>
     </tr>
 
-    <tr *ngFor="let product of products | search: selectedCategory, cat" [ngStyle]="{color: getColor(product)}">
+    <tr *ngFor="let product of products | search: selectedCategory" [ngStyle]="{color: getColor(product)}">
       <td >{{product.id}}</td >
       <td>{{product.name}}</td>
       <td >{{product.price}}</td>

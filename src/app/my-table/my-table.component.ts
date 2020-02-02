@@ -10,7 +10,7 @@ import { Logger } from '../logger-service';
 export class MyTableComponent implements OnInit {
 
   private products = [];
-  private selected;
+  private selectedCategory;
   
   private categories = [
     {id:1, name: 'Category 1'},
@@ -22,7 +22,7 @@ export class MyTableComponent implements OnInit {
 
   ngOnInit() {
     this.products = this.datas.getProducts();
-
+    console.log(this.selectedCategory)
   };
 
 
