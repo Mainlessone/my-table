@@ -7,7 +7,6 @@ import { DataService } from './data.service';
 import { MyTableComponent } from './my-table/my-table.component';
 import { Logger } from './logger-service';
 import { FilterPipe } from './filter.pipe';
-import { NgSelectModule } from '@ng-select/ng-select'
 
 @NgModule({
   declarations: [
@@ -15,11 +14,11 @@ import { NgSelectModule } from '@ng-select/ng-select'
     MyTableComponent,
     FilterPipe
   ],
+  exports: [FilterPipe],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    NgSelectModule
+    FormsModule
   ],
   providers: [DataService, Logger],
   bootstrap: [AppComponent]

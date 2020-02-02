@@ -21,7 +21,8 @@ export class MyTableComponent implements OnInit {
   constructor(private datas:DataService, private logger: Logger){}
 
   ngOnInit() {
-    this.products = this.datas.getProducts()
+    this.products = this.datas.getProducts();
+
   };
 
 
@@ -42,9 +43,6 @@ export class MyTableComponent implements OnInit {
     return this.datas.addTask(task, names, prices);
   };
 
-  onModelChange(event) {
-    console.log(event);
   
-  }
 
   } 
